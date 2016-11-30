@@ -1,0 +1,54 @@
+<%- layout('layout') %>
+<%- partial('sideBar') %>
+<div id="content">
+    <div class="panel">
+        <div class="header">
+            <ul class="breadcrumb">
+                <li><a href="/">首页</a><span class="divider">/</span></li>
+                <li>注册</li>
+            </ul>
+        </div>
+        <div class="inner">
+            <% if((typeof error) != 'undefined' && error){ %>
+            <div class="alert alert-error">
+                <strong><%= error %></strong>
+            </div>
+            <% } %>
+            <% if((typeof success) != 'undefined' && success){ %>
+            <div class="alert alert-success">
+                <strong><%= success %></strong>
+            </div>
+            <% } %>
+            <form action="/reg" method="post" id="regForm" class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label">用户名</label>
+                    <div class="controls">
+                        <input type="text" name="userName" id="userName" class="input-xlarge">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">密码</label>
+                    <div class="controls">
+                        <input type="text" name="passWord" id="passWord" class="input-xlarge">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">确认密码</label>
+                    <div class="controls">
+                        <input type="text" name="rePassWord" id="rePassWord" class="input-xlarge">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">电子邮箱</label>
+                    <div class="controls">
+                        <input type="text" name="eMail" id="eMail" class="input-xlarge">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <input type="submit" value="注册" class="span-primary">
+                    <input type="reset" value="重置" class="span-info">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
